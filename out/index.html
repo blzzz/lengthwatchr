@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>NZZ</title>
+	<link rel="stylesheet" type="text/css" href="styles.css">
+	<script type="text/javascript" src="bundle.js"></script>
+</head>
+<body>
+
+	<ul id="articleList"></ul>
+	
+	<script type="text/template" id="item-template">
+		<h2>
+			<span><%= title %></span>
+			<span class="updatedAt"><%= updatedAt %></span>
+		</h2>
+		<h3><%= teaser %></h3>
+		<h4><% print((departmentNames || []).join(',')) %></h4>
+		<% for(index in images) { %>
+			<img src="<% print(images[index]) %>" width="200" />
+		<% } %>
+		<section><%= body %></section>	
+		<!-- <a href="http://nzz.ch/<%= guid %>">mehr...</a> -->
+	</script>
+
+</body>
+</html>
