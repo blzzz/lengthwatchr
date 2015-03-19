@@ -67,7 +67,7 @@
 	    $iframe.attr({
 	      src: 'http://beta.nzz.ch/' + headline.model.get('guid')
 	    });
-	    $selected.find('> li').removeClass('active');
+	    $selected.children().not(headline.$el).removeClass('active');
 	  }
 	  doOpen = $selected.is(':has(.active)');
 	  win_height = $(window).height();

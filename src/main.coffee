@@ -39,7 +39,7 @@ GlobalChannel.bind('headlineClicked windowResized', (headline) ->
 	if headline and headline.$el.toggleClass('active').is('.active') 
 		
 		$iframe.attr(src:'http://beta.nzz.ch/'+headline.model.get('guid'))
-		$selected.find('> li').removeClass('active')
+		$selected.children().not(headline.$el).removeClass('active')
 	
 	# set up wrapper and iframe
 
