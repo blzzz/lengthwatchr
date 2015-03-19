@@ -86,6 +86,21 @@ sans-serif-font()
 	transition background 1s ease-in-out
 	z-index 3000
 
+	&.visible
+		
+		visibility: visible
+		opacity 1
+		transition opacity 0.4s ease-in-out
+
+	&.hidden
+		
+		visibility: hidden
+		opacity 0
+		transition opacity 0.4s ease-in-out, visibility 0s 0.2s linear
+
+		.fountainG
+			animation none
+
 	@keyframes bounce_fountainG {
 		0%{
 			transform:scale(1);
@@ -104,6 +119,9 @@ sans-serif-font()
 		width 550px
 		color #FFF
 		margin 0 0 2em
+
+		.inactive
+			display none
 
 		h1
 			text-transform uppercase
@@ -128,12 +146,6 @@ sans-serif-font()
 		&.active
 			display block
 
-
-	&.inactive
-		display none
-		
-		.fountainG
-			animation none
 
 	#fountainG
 		position:relative;
@@ -315,6 +327,7 @@ sans-serif-font()
 	relative top 0 
 	width 1000px
 	height 600px
+	
 	background #FFF
 	box-sizing border-box
 	padding 5px
@@ -336,7 +349,7 @@ sans-serif-font()
 		border-top 1px solid #000
 		border-bottom 1px solid #000
 		width 8px
-		
+		min-height 100%
 		
 		div
 			text-align right

@@ -90,10 +90,42 @@ body {
   transition: background 1s ease-in-out;
   z-index: 3000;
 }
+#throbber.visible {
+  visibility: visible;
+  opacity: 1;
+  -ms-filter: none;
+  filter: none;
+  -webkit-transition: opacity 0.4s ease-in-out;
+  -moz-transition: opacity 0.4s ease-in-out;
+  -o-transition: opacity 0.4s ease-in-out;
+  -ms-transition: opacity 0.4s ease-in-out;
+  transition: opacity 0.4s ease-in-out;
+}
+#throbber.hidden {
+  visibility: hidden;
+  opacity: 0;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=0)";
+  filter: alpha(opacity=0);
+  -webkit-transition: opacity 0.4s ease-in-out, visibility 0s 0.2s linear;
+  -moz-transition: opacity 0.4s ease-in-out, visibility 0s 0.2s linear;
+  -o-transition: opacity 0.4s ease-in-out, visibility 0s 0.2s linear;
+  -ms-transition: opacity 0.4s ease-in-out, visibility 0s 0.2s linear;
+  transition: opacity 0.4s ease-in-out, visibility 0s 0.2s linear;
+}
+#throbber.hidden .fountainG {
+  -webkit-animation: none;
+  -moz-animation: none;
+  -o-animation: none;
+  -ms-animation: none;
+  animation: none;
+}
 #throbber .msg {
   width: 550px;
   color: #fff;
   margin: 0 0 2em;
+}
+#throbber .msg .inactive {
+  display: none;
 }
 #throbber .msg h1 {
   text-transform: uppercase;
@@ -133,16 +165,6 @@ body {
 }
 #throbber .btn_go.active {
   display: block;
-}
-#throbber.inactive {
-  display: none;
-}
-#throbber.inactive .fountainG {
-  -webkit-animation: none;
-  -moz-animation: none;
-  -o-animation: none;
-  -ms-animation: none;
-  animation: none;
 }
 #throbber #fountainG {
   position: relative;
@@ -521,6 +543,7 @@ body {
   border-top: 1px solid #000;
   border-bottom: 1px solid #000;
   width: 8px;
+  min-height: 100%;
 }
 #articleContainer .y_axis div {
   text-align: right;
