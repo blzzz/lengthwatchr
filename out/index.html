@@ -3,25 +3,122 @@
 <head>
 	<title>NZZ</title>
 	<link rel="stylesheet" type="text/css" href="styles.css">
+	<link href='http://fonts.googleapis.com/css?family=Gentium+Basic' rel='stylesheet' type='text/css'>
 	<script type="text/javascript" src="bundle.js"></script>
 </head>
 <body>
+	<div id="mainWrapper">
+		<div class="filling">
+			<div id="articleContainer">
+				
+				<ul class="groups"></ul>
+				
+				<div class='y_axis'>
+					<div class="top">kurz</div>
+					<div class="bottom">lang</div>
+					<div class="setting">
+						<span class="label">Wortanzahl</span>
+						<div class="switch"></div>
+						<ul class="options">
+							<li class="values active"></li>
+							<li class="ratio">min - max</li>
+						</ul>
+					</div>
+				</div>
 
-	<ul id="articleList"></ul>
+				<div class="selection_panel">
+
+					<div class="info">
+						<div class="articles">
+							<strong><span class="num">0</span> Artikel selektiert</strong>	
+						</div>
+						<div class="readtime inactive">
+							Gesamtlesezeit: <strong>ca. <span class="minutes">0</span> min</strong>
+						</div>
+						<div class="bar">
+							<div class="filled"></div>
+						</div>
+					</div>	
+
+					<ul class="selected_articles"></ul>
+
+					<div class="btns">
+						<div class="read inactive btn">
+							<span>selektierte Artikel lesen</span>
+						</div>
+						<div class="load_more btn">
+							<span>mehr laden</span>
+						</div>
+						<div class="reload btn">
+							<span>neu laden</span>
+						</div>
+					</div>
+
+				</div>
+			</div>
+
+		</div>
+
+		<div id="iframeBrowser" class="filling">
+			<iframe></iframe>
+		</div>
+
+	</div>
+
+	<div id="articleTooltipbox"></div>
 	
-	<script type="text/template" id="item-template">
+	<div id="throbber">
+
+		<div class="msg">
+			<h1>LengthWatchr – wie viel steckt dahinter?</h1>
+			<h2>Erst nachdem der Leser einen Online-Artikel geladen hat, ist er imstande die Inhaltsmenge abzuschätzen. Dies führt oft dazu, dass dem Leser ein Text vorgesetzt wird, zu dessen Lektüre ihm die Zeit fehlt. <br> Doch hier kommt LengthWatchr ins Spiel: Diese Applikation bietet eine enstsprechende Übersicht und lässt Benutzer längenmässig adäquate NZZ-Artikel auffinden!</h2>
+		</div>
+		<div class="toggle_div">
+			<div id="fountainG">
+				<div id="fountainG_1" class="fountainG"></div>
+				<div id="fountainG_2" class="fountainG"></div>
+				<div id="fountainG_3" class="fountainG"></div>
+				<div id="fountainG_4" class="fountainG"></div>
+				<div id="fountainG_5" class="fountainG"></div>
+				<div id="fountainG_6" class="fountainG"></div>
+				<div id="fountainG_7" class="fountainG"></div>
+				<div id="fountainG_8" class="fountainG"></div>
+			</div>
+			<div class="btn btn_go">
+				<span>Applikation starten</span>
+			</div>
+		</div>
+	</div>
+
+
+	<!-- TEMPLATES -->
+
+
+	<script type="text/template" id="group-template">
+		
 		<h2>
-			<span><%= title %></span>
-			<span class="updatedAt"><%= updatedAt %></span>
+			<span class="dep"><%= department %></span>
 		</h2>
-		<h3><%= teaser %></h3>
-		<h4><% print((departmentNames || []).join(',')) %></h4>
-		<% for(index in images) { %>
-			<img src="<% print(images[index]) %>" width="200" />
-		<% } %>
-		<section><%= body %></section>	
-		<!-- <a href="http://nzz.ch/<%= guid %>">mehr...</a> -->
+		<div class="boundingbox"></div>	
+		<div class="average"></div>	
+		<ul class="articles"></ul>
+		
 	</script>
+
+
+	<script type="text/template" id="tooltip-template">
+		
+		<div class="arrow_up"></div>
+		<h2><%= title %></h2>
+		<div class="props">
+			<span>Lesezeit: <strong>ca. <%= readLength %> min<strong></span>
+			<span>letzte Aktualisierung: <%= updatedAt %></span>
+		</div>
+		<h3><%= teaser %></h3>
+
+	</script>
+
+
 
 </body>
 </html>

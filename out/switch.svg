@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg width="27px" height="43px" viewBox="0 0 27 43" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns:sketch="http://www.bohemiancoding.com/sketch/ns">
+    <!-- Generator: Sketch 3.2.2 (9983) - http://www.bohemiancoding.com/sketch -->
+    <title>Rectangle 26 + Rectangle 27</title>
+    <desc>Created with Sketch.</desc>
+    <defs></defs>
+    <g id="Page-3" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd" sketch:type="MSPage">
+        <g id="Artboard-3" sketch:type="MSArtboardGroup" transform="translate(-199.000000, -519.000000)">
+            <g id="Rectangle-26-+-Rectangle-27" sketch:type="MSLayerGroup" transform="translate(212.500000, 540.500000) rotate(-270.000000) translate(-212.500000, -540.500000) translate(191.000000, 527.000000)">
+                <rect id="Rectangle-26" fill="#6E5F5F" sketch:type="MSShapeGroup" x="0.958984375" y="0.5" width="42" height="26" rx="14"></rect>
+                <rect id="Rectangle-27" fill="#FFFFFF" sketch:type="MSShapeGroup" x="2.00030669" y="2.5" width="21.8677686" height="22" rx="14"></rect>
+            </g>
+        </g>
+    </g>
+</svg>
